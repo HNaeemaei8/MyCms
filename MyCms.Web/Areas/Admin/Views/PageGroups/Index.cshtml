@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MyCms.Domain.Entities.Page.PageGroup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a onclick="create()">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr id="tr_@(item.GroupId)">
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @* <a asp-action="Edit" asp-route-id="@item.GroupId">Edit</a> |*@
+                <a onclick="edit(@item.GroupId)">
+                    ویرایش
+                </a>
+                <a onclick="Delete(@item.GroupId)">
+                    حذف
+                </a>
+                @* <a asp-action="Details" asp-route-id="@item.GroupId">Details</a> |*@
+                @*<a asp-action="Delete" asp-route-id="@item.GroupId">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body" id="bodyModal">
+                ...
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+
+    <script>
+        function create() {
+            debugger;
+                $("#myModalLabel").html("افزودن گروه جدید");
+                $("#myModal").modal();
+                $("#bodyModal").load("/Admin/PageGroups/Create");
+        }
+
+
+      
+        function edit(id) {
+            debugger;
+            $("#myModalLabel").html("ویرایش گروه");
+            $("#myModal").modal();
+            $("#bodyModal").load("/Admin/PageGroups/edit/" + id);
+            //jquery $("#bodyModal")
+            //java script var el =document.getelementbyid("bodyModal")
+        }
+        function Delete(id) {
+            debugger;
+            $.get("/Admin/PageGroups/Delete/" + id);
+            $("#tr_" + id).hide('slow');
+        }
+    </script>
+
+}

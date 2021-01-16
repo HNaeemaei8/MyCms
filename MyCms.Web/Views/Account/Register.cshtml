@@ -1,0 +1,91 @@
+﻿@model MyCms.Domain.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>ثبت نام</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+                @if (ViewBag.IsUserNameExist != null)
+                {
+                    <div class="alert alert-danger">
+                        <p class="text-muted">
+                            نام کاربری وارد شده قبلا در سایت ثبت شده است میتوانید از گزینه 
+                            <a href="/RecoveryPassword"> بازیابی کلمه عبور </a>
+                            استفاده کنید
+
+                        </p>
+                    </div>
+                }
+                </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <div id="alert" class="alert alert-danger" style="display: none">
+                    <p class="text-muted">
+                        ایمیل وارد شده قبلا در سایت ثبت شده است میتوانید از گزینه 
+                        <a href="/RecoveryPassword"> بازیابی کلمه عبور </a>
+                        استفاده کنید
+
+                    </p>
+                </div>
+                @if (ViewBag.IsEmailExist != null)
+           {
+               <div class="alert alert-danger">
+                   <p class="text-muted">
+                       ایمیل وارد شده قبلا در سایت ثبت شده است میتوانید از گزینه 
+                       <a href="/RecoveryPassword"> بازیابی کلمه عبور </a>
+                       استفاده کنید
+
+                   </p>
+               </div>
+           }
+                </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RePassword" class="control-label"></label>
+                <input asp-for="RePassword" class="form-control" />
+                <span asp-validation-for="RePassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت نام" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $("input[name='Email']").on("blur",function() {
+            $.ajax({
+                url: "/Account/CheckEmail?email=" + $("input[name='Email']").val(),
+                type: "Get"
+
+            }).done(function (res) {
+              //alert(res);
+                if (res.toString() == "true") {
+                    $("#alert").show();
+                } else {
+                    $("#alert").hide();
+                }
+            });
+        });
+    </script>
+}

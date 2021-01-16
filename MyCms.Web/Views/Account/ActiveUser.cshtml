@@ -1,0 +1,30 @@
+﻿@model bool
+@{
+    ViewData["Title"] = "ActiveUser";
+}
+
+<h2>فعالسازی حساب کاربری</h2>
+@if (Model)
+{
+    <div class="alert alert-success">
+        حساب کاربری شما فعال شد
+    </div>
+    @section Scripts
+    {
+    <script>
+    $(function() {
+        window.setTimeout(function() {
+            window.location.href = '/';
+        }, 5000);
+    })
+        </script>
+    }
+}
+else
+{
+    <div class="alert alert-warning">
+        اطلاعات ارسالی صحیح نیست
+    </div>
+}
+
+
