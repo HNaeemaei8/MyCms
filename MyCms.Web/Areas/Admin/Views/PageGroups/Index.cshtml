@@ -4,7 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
     <a onclick="create()">Create New</a>
@@ -81,7 +80,7 @@
         }
         function Delete(id) {
             debugger;
-            $.get("/Admin/PageGroups/Delete/" + id);
+            $.post("/Admin/PageGroups/Delete/" + id);
             $("#tr_" + id).hide('slow');
         }
     </script>

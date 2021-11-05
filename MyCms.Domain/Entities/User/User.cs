@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyCms.Domain.Entities.Page;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -36,5 +37,6 @@ namespace MyCms.Domain.Entities.User
 
         public Role Role { get; set; }
 
+        public List<PageComment> PageComments { get; set; }
     }
 }

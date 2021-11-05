@@ -66,7 +66,7 @@ namespace MyCms.Web
             #region Ioc
 
             services.AddScoped<IUserRepository, UserRepository>();
-
+            services.AddScoped<IPageRepository, PageRepository>();
             #endregion
 
         }

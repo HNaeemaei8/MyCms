@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="GroupId" class="control-label"></label>
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ShortDescription" class="control-label"></label>
-                <textarea asp-for="ShortDescription" class="form-control" rows="5"></textarea>
+                <textarea asp-for="ShortDescription" class="form-control" rows="4"></textarea>
                 @*<input asp-for="ShortDescription" class="form-control" />*@
                 <span asp-validation-for="ShortDescription" class="text-danger"></span>
             </div>
@@ -34,10 +34,10 @@
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                    <label asp-for="PageVisit" class="control-label"></label>
-                    <input asp-for="PageVisit" class="form-control" />
-                    <span asp-validation-for="PageVisit" class="text-danger"></span>
-                </div>*@
+            <label asp-for="PageVisit" class="control-label"></label>
+            <input asp-for="PageVisit" class="form-control" />
+            <span asp-validation-for="PageVisit" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
                 <label asp-for="Tags" class="control-label"></label>
                 <input asp-for="Tags" class="form-control" />
@@ -62,6 +62,13 @@
                 </div>
             </div>
             <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsSlider" /> @Html.DisplayNameFor(model => model.IsSlider)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
@@ -78,11 +85,13 @@
     <link href="http://cdn.kendostatic.com/2013.2.918/styles/kendo.common.min.css" rel="stylesheet" />
     <link href="http://cdn.kendostatic.com/2013.2.918/styles/kendo.default.min.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
-    <script src="/js/kendo.all.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/[version.number]/[distribution]/ckeditor.js"></script>
+    <script src="~/js/kendo.all.min.js"></script>
     <script>
         CKEDITOR.replace('Text');
         $("#CreateDate").kendoDatePicker();
     </script>
 
 }
+<a class="btn btn-success" style="position:fixed;bottom:20px;left:20px;" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow');">Up</a>

@@ -26,6 +26,7 @@ namespace MyCms.Domain.Repositories
         #region Auth
 
         User LoginUser(string email, string password);
+        int GetUserIdByUserName(string username);
 
         #endregion
 

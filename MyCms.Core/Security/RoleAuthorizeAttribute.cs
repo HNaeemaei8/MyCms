@@ -14,7 +14,8 @@ namespace MyCms.Core.Security
             {
                 context.HttpContext.Response.Redirect("/Login");
             }
-            if (context.HttpContext.User.FindFirst("RoleID").Value != "admin")
+
+            else if (context.HttpContext.User.FindFirst("RoleId") == null || context.HttpContext.User.FindFirst("RoleId").Value != "Admin")
             {
                 context.HttpContext.Response.Redirect("/Login");
             }

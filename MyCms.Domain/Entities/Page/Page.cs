@@ -34,6 +34,9 @@ namespace MyCms.Domain.Entities.Page
         [Display(Name = "فعال")]
         public bool IsActive { get; set; }
 
+        [Display(Name = "اسلایدر")]
+        public bool IsSlider { get; set; }
+
         public PageGroup PageGroup { get; set; }
         public List<PageComment>  pageComments { get; set; }
     }

@@ -111,5 +111,10 @@ namespace MyCms.Domain.Services
         {
             return _ctx.Users.SingleOrDefault(u => u.ActiveCode == code);
         }
+
+        public int GetUserIdByUserName(string username)
+        {
+            return _ctx.Users.SingleOrDefault(u=>u.UserName==username).UserId;
+        }
     }
 }

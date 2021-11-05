@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<MyCms.Domain.Entities.Page.Page>
+@using MyCms.Core.Resources
 
 @{
     ViewData["Title"] = "Index";
@@ -13,71 +14,89 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ShortDescription)
+                @Html.DisplayNameFor(model => model.PageGroup)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Text)
-            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ShortDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Text)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.PageVisit)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tags)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageName)
-            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Tags)
+                </th>*@
+
             <th>
                 @Html.DisplayNameFor(model => model.CreateDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IsActive)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PageGroup)
-            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @*<img src="~/PageImages/9ca0ab6b-6bd2-44ff-8e64-dcdd6ce191df.png" />*@
+                    @*@Html.DisplayFor(modelItem => item.ImageName)*@
+                    <img class="thumbnail" style="max-width:120px" src="@(CmsFilePath.PageImagePath + item.ImageName)" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageGroup.Title)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ShortDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageVisit)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Tags)
+                    </td>*@
+
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @* @Html.DisplayFor(modelItem => item.CreateDate)*@
+                @item.CreateDate.ToString("yyyy/MM/dd");
+
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ShortDescription)
+                @* @Html.DisplayFor(modelItem => item.IsActive)*@
+                @*@item.CreateDate.ToString("yyyy/MM/dd");*@
+                @if (item.IsActive)
+                {
+                    <p class="text-success">فعال است</p>
+                }
+                else
+                {
+                    <p class="text-danger">غیر فعال است</p>
+                }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PageVisit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tags)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PageGroup.Title)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PageId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PageId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PageId">Delete</a>
-            </td>
-        </tr>
-}
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PageId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PageId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PageId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -33,6 +33,8 @@ namespace MyCms.Domain.Migrations
 
                     b.Property<bool>("IsActive");
 
+                    b.Property<bool>("IsSlider");
+
                     b.Property<int>("PageVisit");
 
                     b.Property<string>("ShortDescription")
@@ -65,13 +67,15 @@ namespace MyCms.Domain.Migrations
 
                     b.Property<DateTime>("CreateDate");
 
-                    b.Property<int?>("PageId");
+                    b.Property<int>("PageId");
 
                     b.Property<int>("UserId");
 
                     b.HasKey("CommentId");
 
                     b.HasIndex("PageId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("PageComments");
                 });
@@ -152,7 +156,13 @@ namespace MyCms.Domain.Migrations
                 {
                     b.HasOne("MyCms.Domain.Entities.Page.Page", "Page")
                         .WithMany("pageComments")
-                        .HasForeignKey("PageId");
+                        .HasForeignKey("PageId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MyCms.Domain.Entities.User.User", "User")
+                        .WithMany("PageComments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MyCms.Domain.Entities.User.User", b =>

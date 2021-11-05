@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace MyCms.Core.Convertor
 {
-   public static class DateConvertor
+   public static class DateConvtetor
     {
         public static string ToShamsi(this DateTime value)
         {

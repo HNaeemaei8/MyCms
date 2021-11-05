@@ -1,0 +1,37 @@
+﻿@model  MyCms.Domain.ViewModels.ArchiveViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="last-news-section border-radius margin-top-60">
+    <header><i class="icons icon-doc-2"></i>  <h3>   آخرین آخبار ارسالی  @ViewBag.GroupTitle</h3> </header>
+    <ul>
+        @foreach (var item in Model.Pages)
+        {
+            <li>
+                <img class="border-radius" src="~/PageImages/@item.ImageName">
+                <h2> <a href="/News/@item.PageId"> @item.Title </a></h2>
+                <p>
+                    @item.ShortDescription
+                </p>
+                <span class="date-publish"><i class="fa fa-calendar"></i> انتشار : @item.CreateDate.ToShamsi() </span>
+                <a href="/News/@item.PageId" class="more-link"><i class="icons icon-more"></i></a>
+            </li>
+        }
+
+
+    </ul>
+</section>
+    @if (Model.PageCount > 1)
+    {
+        for (int i = 1; i <= Model.PageCount; i++)
+        {
+            <ul class="pagination">
+                <li class="@((i==Model.CurrentPage)?"active":"")"><a  href="/Group/@Model.Pages[0].GroupId/@(ViewBag.GroupTitle)?PageId=@i">@i</a></li>
+          
+            </ul>
+        }
+
+    }
+
+

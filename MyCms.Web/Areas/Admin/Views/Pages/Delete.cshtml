@@ -1,4 +1,5 @@
 ﻿@model MyCms.Domain.Entities.Page.Page
+@using MyCms.Core.Resources
 
 @{
     ViewData["Title"] = "Delete";
@@ -23,29 +24,30 @@
         <dd>
             @Html.DisplayFor(model => model.ShortDescription)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Text)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Text)
+            </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.PageVisit)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.PageVisit)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Tags)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Tags)
-        </dd>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Tags)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Tags)
+            </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.ImageName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ImageName)
+            @*@Html.DisplayFor(model => model.ImageName)*@
+            <img src="@(CmsFilePath.PageImagePath+ Model.ImageName)" class="thumbnail" style="max-width:150px" />
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.CreateDate)
@@ -66,7 +68,7 @@
             @Html.DisplayFor(model => model.PageGroup.Title)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="PageId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

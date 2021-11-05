@@ -1,0 +1,13 @@
+﻿@using MyCms.Domain.Repositories;
+@inject IPageRepository pageRepository
+<li>
+    <span>گروه های خبری</span>
+    <ul>
+        @foreach (var item in await pageRepository.GetAllGroup())
+        {
+            <li><a href="/Group/@item.GroupId/@item.Title">@item.Title</a></li>
+
+        }
+
+    </ul>
+</li>

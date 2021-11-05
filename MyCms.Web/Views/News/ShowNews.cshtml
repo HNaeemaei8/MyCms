@@ -1,0 +1,75 @@
+﻿@model MyCms.Domain.Entities.Page.Page
+
+@{
+    ViewData["Title"] = "ShowNews";
+}
+
+<section class="single-news border-radius">
+    <header><h2> @Model.Title </h2> <span> <i class="fa fa-calendar"></i>  انتشار : @Model.CreateDate.ToShamsi()</span></header>
+    <article>
+        <p>
+            @Model.ShortDescription
+        </p>
+        <div>
+            <img class="thumbnail" src="~/PageImages/@Model.ImageName" title="@Model.Title" />
+        </div>
+        <p>
+            @Html.Raw(Model.Text)
+        </p>
+    </article>
+</section>
+
+<div class="keywords border-radius">
+    @foreach (string tag in Model.Tags.Split('-'))
+    {
+        <a href="/Search?q=@tag"> @tag </a>
+
+    }
+
+</div>
+
+
+<section class="comment-layer">
+    <header> <i class="fa fa-comments"></i><h5> دیدگاه کاربران </h5><span> @ViewBag.CountComment دیدگاه </span> </header>
+    <ul id="lst">
+      
+    </ul>
+
+
+    <h6> شما هم دیدگاه خود را ارسال کنید </h6>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <form class="comment-form" action="" method="post">
+
+            <textarea id="txtComment" style="width:100%" placeholder=" متن دیدگاه"> </textarea>
+            <input id="BtnAddComment" value="ثبت دیدگاه ارزشمند شما " type="button">
+        </form>
+    }
+    else
+	{
+	            <div class="alert alert-danger">
+                    <p>برای درج نظر باید وارد سایت  شوید </p>
+                </div>
+	}
+</section>
+
+<script>
+    $("#BtnAddComment").click(function () {
+        $.ajax({
+            url:"/News/AddComment/+@Model.PageId",
+            data:{ comment: $("#txtComment").val() },
+            type:"Get"
+        }).done(function () {
+            LoadComment();
+        $("#txtComment").val("");
+    });
+    });
+
+   $ (function () {
+        LoadComment()
+    });
+
+    function LoadComment() {
+        $("#lst").load("/News/PageComment/+@Model.PageId")
+    }
+</script>
