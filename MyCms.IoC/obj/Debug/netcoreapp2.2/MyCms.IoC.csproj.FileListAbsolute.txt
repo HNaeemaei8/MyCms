@@ -1,0 +1,28 @@
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.deps.json
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.dll
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.pdb
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.csproj.CoreCompileInputs.cache
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.AssemblyInfoInputs.cache
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.AssemblyInfo.cs
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.dll
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.pdb
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.csprojAssemblyReference.cache
+D:\Session_04\Session_04\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.deps.json
+D:\Session_04\Session_04\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.dll
+D:\Session_04\Session_04\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.pdb
+D:\Session_04\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.AssemblyInfoInputs.cache
+D:\Session_04\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.AssemblyInfo.cs
+D:\Session_04\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.csproj.CoreCompileInputs.cache
+D:\Session_04\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.dll
+D:\Session_04\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.pdb
+D:\Session_04\Session_04\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.csprojAssemblyReference.cache
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.deps.json
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.dll
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\bin\Debug\netcoreapp2.2\MyCms.IoC.pdb
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.csproj.AssemblyReference.cache
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.GeneratedMSBuildEditorConfig.editorconfig
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.AssemblyInfoInputs.cache
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.AssemblyInfo.cs
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.csproj.CoreCompileInputs.cache
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.dll
+D:\flash1\USB Drive\Work samples\Work samples\MyCms\MyCms.IoC\obj\Debug\netcoreapp2.2\MyCms.IoC.pdb

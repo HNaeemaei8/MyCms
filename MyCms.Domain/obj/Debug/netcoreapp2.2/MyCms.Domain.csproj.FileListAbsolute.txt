@@ -1,0 +1,9 @@
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\bin\Debug\netcoreapp2.2\MyCms.Domain.deps.json
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\bin\Debug\netcoreapp2.2\MyCms.Domain.dll
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\bin\Debug\netcoreapp2.2\MyCms.Domain.pdb
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\obj\Debug\netcoreapp2.2\MyCms.Domain.csprojAssemblyReference.cache
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\obj\Debug\netcoreapp2.2\MyCms.Domain.csproj.CoreCompileInputs.cache
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\obj\Debug\netcoreapp2.2\MyCms.Domain.AssemblyInfoInputs.cache
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\obj\Debug\netcoreapp2.2\MyCms.Domain.AssemblyInfo.cs
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\obj\Debug\netcoreapp2.2\MyCms.Domain.dll
+C:\Academy\AspCore_13980709\Session_04\MyCms\MyCms.Domain\obj\Debug\netcoreapp2.2\MyCms.Domain.pdb
